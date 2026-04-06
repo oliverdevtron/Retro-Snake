@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Arcade Snake</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="game-container">
+        <div class="header">
+            <div class="glass-badge score">SCORE<br><span id="score">0</span></div>
+            <div class="title">CYBER<br>SNAKE</div>
+            <div class="glass-badge highscore">HIGH<br><span id="highscore">0</span></div>
+        </div>
+        
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas" width="600" height="600"></canvas>
+            
+            <div id="startScreen" class="overlay-screen active">
+                <h1>CYBER<br>SNAKE</h1>
+                <div class="difficulty-select">
+                    <span id="diff-easy" class="diff-option">EASY</span>
+                    <span id="diff-normal" class="diff-option active-diff">NORMAL</span>
+                    <span id="diff-hard" class="diff-option">HARD</span>
+                </div>
+                <p class="blink">PRESS SPACE TO START</p>
+                <div class="controls">
+                    <p>WASD / Arrows to Move</p>
+                    <p>Red Apple: +10 pts</p>
+                    <p style="color: gold;">Gold Apple: +50 pts & Speed</p>
+                    <p style="color: #ff00ff;">Glitch Apple: ???</p>
+                </div>
+            </div>
+
+            <div id="gameOverScreen" class="overlay-screen">
+                <h1 id="gameOverTitle" style="color: #f15bb5;">GAME OVER</h1>
+                <p>SCORE: <span id="finalScore">0</span></p>
+                
+                <div id="highscoreEntry" class="highscore-entry" style="display: none;">
+                    <p class="new-high-text">NEW HIGHSCORE!</p>
+                    <div class="letter-inputs">
+                        <span class="letter active-letter" id="letter-0">A</span>
+                        <span class="letter" id="letter-1">A</span>
+                        <span class="letter" id="letter-2">A</span>
+                    </div>
+                </div>
+
+                <p id="restartText" class="blink">PRESS SPACE TO RESTART</p>
+            </div>
+            
+            <div id="statusMessage" class="status-message"></div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
